@@ -31,6 +31,10 @@ define(['angular', 'components/shared/index'], (angular) => {
       })
     }
 
+    $scope.doTheAction = () => {
+      alert('You can do something here.')
+    }
+
     init()
   }])
 })

@@ -18,7 +18,7 @@
       <div ng-cloak>
 
         <div class="button-row">
-          <a href="edit.html" class="button">Do an action</a>
+          <button ng-click="doTheAction()" class="button">Do an action</button>
         </div>
 
         <div ng-init="schoolId = ~(curschoolid); loading = true" ng-hide="loading">
