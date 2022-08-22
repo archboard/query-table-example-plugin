@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin version="0.0.1" name="Table Query Sample" description="This is a simple example of how to display data from a query into a table." xmlns="http://plugin.powerschool.pearson.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://plugin.powerschool.pearson.com plugin.xsd">
+  <publisher name="Grant Holle">
+    <contact email="grant@archboard.io"/>
+  </publisher>
+  <access_request>
+    <field table="students" field="lastfirst" access="ViewOnly"/>
+    <field table="students" field="student_number" access="ViewOnly"/>
+    <field table="students" field="grade_level" access="ViewOnly"/>
+  </access_request>
+</plugin>

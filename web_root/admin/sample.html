@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Query Table Example</title>
+    ~[wc:commonscripts]
+    <link href="/images/css/screen.css" rel="stylesheet" media="screen">
+    <link href="/images/css/print.css" rel="stylesheet" media="print">
+    <script>
+    </script>
+  </head>
+  <body>
+    ~[wc:admin_header_css]
+    <a href="/admin/home.html" target="_top">Start Page</a> &gt; Query Table Example
+    ~[wc:admin_navigation_css]
+
+    <h1>Query Table Example</h1>
+    <div id="table-example-wrapper" ng-controller="TableSampleController">
+      <div ng-cloak>
+
+        <div class="button-row">
+          <a href="edit.html" class="button">Do an action</a>
+        </div>
+
+        <div ng-init="schoolId = ~(curschoolid); loading = true" ng-hide="loading">
+          <div data-pss-grid-widget data-data="students.all" data-filtered-data="students.filtered" data-client-side-pagination="true">
+            <table class="grid data-table">
+              <thead>
+                <tr>
+                  <th data-pss-sort-fields="name">Name</th>
+                  <th data-pss-sort-fields="student_number">Student Number</th>
+                  <th data-pss-sort-fields="grade_level|number">Grade</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-ng-repeat="student in students.filtered">
+                  <td>{{ student.lastfirst }}</td>
+                  <td>{{ student.student_number }}</td>
+                  <td>{{ student.grade_level }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div ng-show="loading" class="center">
+        <div class="right progress large" data-pss-wait-spinner="large"><div></div></div>
+      </div>
+    </div>
+
+    ~[wc:admin_footer_css]
+    <script>
+      require(['angular', 'query-table-example/controllers/table-controller'], angular => {
+        angular.bootstrap(document.getElementById('table-example-wrapper'), ['TableSampleModule'])
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<queries>
+  <query name="io.archboard.sample_table.students.fetch_students" flattened="true">
+    <description>This is just a sample query to retrieve students.</description>
+    <columns>
+      <column column="students.student_number">student_number</column>
+      <column column="students.lastfirst">lastfirst</column>
+      <column column="students.grade_level">grade_level</column>
+    </columns>
+    <sql>
+      <![CDATA[
+select
+  student_number,
+  lastfirst,
+  grade_level
+from students
+      ]]>
+    </sql>
+  </query>
+</queries>
